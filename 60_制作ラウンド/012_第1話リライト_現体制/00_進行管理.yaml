@@ -1,0 +1,88 @@
+round:
+  id: "012"
+  name: "第1話リライト_現体制"
+  status: "completed"
+  purpose: "最初に生成した第1話『雨がやむまで』を、現在の人物設定・舞台設定・土地考証・編集体制でリライトする"
+  owner_intent: "AIライティング自動化の本番運用として、現体制でのライティング力を確認したい"
+  dispatch_brief: "00_編集発注.md"
+
+subagents:
+  - role: "原作"
+    status: "completed"
+    agent_path: "10_役割別作業場/01_原作/agent.md"
+    output: "01_原作案.md"
+    agent_id: "019e65e6-f24b-7e72-9fcc-47e2d2e26204"
+    started_at: "2026-05-27"
+    completed_at: "2026-05-27"
+    closed: true
+  - role: "考証"
+    status: "completed"
+    agent_path: "10_役割別作業場/02_考証/agent.md"
+    output: "02_考証メモ.md"
+    agent_id: "019e65eb-d5ea-7151-b38d-389312bc2807"
+    started_at: "2026-05-27"
+    completed_at: "2026-05-27"
+    closed: true
+  - role: "脚本"
+    status: "completed"
+    agent_path: "10_役割別作業場/03_脚本/agent.md"
+    output: "03_脚本ドラフト.md"
+    agent_id: "019e65ee-b548-7b63-91f6-82fc3183be92"
+    started_at: "2026-05-27"
+    completed_at: "2026-05-27"
+    closed: true
+  - role: "文体"
+    status: "completed"
+    agent_path: "10_役割別作業場/05_文体/agent.md"
+    output: "03_脚本ドラフト_文体調整.md"
+    agent_id: "019e65f1-7cea-72d2-b7d9-e7f09e32d45d"
+    started_at: "2026-05-27"
+    completed_at: "2026-05-27"
+    closed: true
+  - role: "肯定レビュー"
+    status: "completed"
+    agent_path: "10_役割別作業場/04_編集/肯定レビュー_agent.md"
+    output: "04_肯定レビュー.md"
+    agent_id: "019e65f5-54bd-7802-ae8f-d6c3657dbd5b"
+    started_at: "2026-05-27"
+    completed_at: "2026-05-27"
+    closed: true
+  - role: "否定レビュー"
+    status: "completed"
+    agent_path: "10_役割別作業場/04_編集/否定レビュー_agent.md"
+    output: "05_否定レビュー.md"
+    agent_id: "019e65f5-91c4-7192-9422-c2f17e7d21a4"
+    started_at: "2026-05-27"
+    completed_at: "2026-05-27"
+    closed: true
+  - role: "編集統合"
+    status: "completed"
+    agent_path: "10_役割別作業場/04_編集/agent.md"
+    outputs:
+      - "06_統合編集レビュー.md"
+      - "07_リテイク指示.md"
+      - "08_完成稿.md"
+      - "09_次回原作発注.md"
+    agent_id: "019e65f8-47ca-7002-8804-28d205657293"
+    started_at: "2026-05-27"
+    completed_at: "2026-05-27"
+    closed: true
+
+reflection:
+  status: "completed"
+  target_files:
+    - "20_校了品/01_話別完成稿/001_雨がやむまで.md"
+    - "20_校了品/小説正本.md"
+    - "00_運用管理/制作ダッシュボード.yaml"
+  agent_id: "019e65fb-d9e1-79c2-be37-9d2d19bccb01"
+  closed: true
+
+final:
+  judgment: "第1話として合格、正本反映済み"
+  authoritative_output: "20_校了品/01_話別完成稿/001_雨がやむまで.md"
+  updated_files:
+    - "20_校了品/01_話別完成稿/001_雨がやむまで.md"
+    - "20_校了品/小説正本.md"
+    - "00_運用管理/制作ダッシュボード.yaml"
+    - "60_制作ラウンド/012_第1話リライト_現体制/00_進行管理.yaml"
+  next_round: "09_次回原作発注.md に基づく第2話原作案"

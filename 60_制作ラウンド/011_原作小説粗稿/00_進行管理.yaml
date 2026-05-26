@@ -1,0 +1,65 @@
+round:
+  id: "011"
+  name: "原作小説粗稿"
+  status: "in_progress"
+  purpose: "作中映画『あいにくの雨ですが』の恋愛コメディ原作アレンジを作る"
+  owner_intent: "原作は深追いせず、恋愛コメディとして撮影現場に渡せる形へアレンジする"
+
+outputs:
+  editorial_brief:
+    path: "60_制作ラウンド/011_原作小説粗稿/00_編集発注.md"
+    status: "completed"
+  original_source:
+    path: "60_制作ラウンド/011_原作小説粗稿/01_原作案.md"
+    status: "completed"
+  assistant_check:
+    path: "60_制作ラウンド/011_原作小説粗稿/02_補佐チェック.md"
+    status: "completed"
+  original_arrangement:
+    path: "60_制作ラウンド/011_原作小説粗稿/01_原作案_恋愛コメディアレンジ.md"
+    status: "completed"
+
+subagents:
+  - role: "原作"
+    status: "completed"
+    output_path: "60_制作ラウンド/011_原作小説粗稿/01_原作案_恋愛コメディアレンジ.md"
+    agent_id: "019e63b5-7910-74b2-8392-7f925bccfd12"
+    closed: true
+  - role: "考証"
+    status: "completed"
+    output_path: "60_制作ラウンド/011_原作小説粗稿/02_考証メモ.md"
+    agent_id: "019e63be-9016-7ad3-8e07-367ecd43a67b"
+    closed: true
+  - role: "脚本"
+    status: "completed"
+    output_path: "60_制作ラウンド/011_原作小説粗稿/03_脚本ドラフト.md"
+    agent_id: "019e63c1-ab7d-7973-a292-a94303268d71"
+    closed: true
+  - role: "肯定レビュー"
+    status: "completed"
+    output_path: "60_制作ラウンド/011_原作小説粗稿/04_肯定レビュー.md"
+    agent_id: "019e63c4-1c8c-7990-a02b-881a950ff2c3"
+    closed: true
+  - role: "否定レビュー"
+    status: "completed"
+    output_path: "60_制作ラウンド/011_原作小説粗稿/05_否定レビュー.md"
+    agent_id: "019e63c4-4dc3-7023-86ca-48c507a21901"
+    closed: true
+  - role: "編集統合"
+    status: "completed"
+    output_path: "60_制作ラウンド/011_原作小説粗稿/06_統合編集レビュー.md; 60_制作ラウンド/011_原作小説粗稿/07_リテイク指示.md; 60_制作ラウンド/011_原作小説粗稿/08_完成稿.md; 60_制作ラウンド/011_原作小説粗稿/09_次回原作発注.md"
+    agent_id: "019e63c7-3cf2-7e91-a9e8-a744ffacc87d"
+    closed: true
+  - role: "反映担当"
+    status: "completed"
+    output_path: "20_校了品/小説正本.md"
+    agent_id: "019e63ca-c10f-7f63-95c8-f79a46e9b10b"
+    closed: true
+
+final_judgment: "ラウンド011『あいにくの雨ですが』は、正式サブエージェント運用で原作、考証、脚本、肯定レビュー、否定レビュー、編集統合、正本反映まで完了。校了。"
+authoritative_output: "20_校了品/小説正本.md"
+updated_setting_files:
+  - "70_オーナー窓口/03_採用済みオーナー判断.md"
+  - "05_作中映画と破綻原作設定.md"
+  - "00_運用管理/制作ダッシュボード.yaml"
+next_round: "012_破綻改変準備"

@@ -1,0 +1,51 @@
+round:
+  id: "008"
+  name: "人物深掘り_久我修一"
+  status: "completed"
+  purpose: "久我修一を「監督」として深掘りする"
+  owner_intent: "現場を率いる監督として、現実の制約と創作への執念、役者のリアルに揺れる姿を深掘りする（後藤隊長イメージ＆否定レビュー反映完了）"
+  dispatch_brief: "00_編集発注.md"
+
+subagents:
+  - role: "原作"
+    status: "completed"
+    output: "01_原作案.md"
+    agent_id: "84daa745-41f1-434b-8167-7629beb50694"
+    closed: true
+  - role: "考証"
+    status: "completed"
+    output: "02_考証メモ.md"
+    agent_id: "70549bec-874f-432a-a33b-367a894ddb9f"
+    closed: true
+  - role: "脚本"
+    status: "completed"
+    output: "03_脚本ドラフト.md"
+    agent_id: "d04d3e87-58c5-47e6-bd21-1b86b88784ac"
+    closed: true
+  - role: "肯定レビュー"
+    status: "completed"
+    output: "04_肯定レビュー.md"
+    agent_id: "5eaf1963-3173-41e5-b50a-b65f3e1118dd"
+    closed: true
+  - role: "否定レビュー"
+    status: "completed"
+    output: "05_否定レビュー.md"
+    agent_id: "022504d2-d0ec-4f34-9f04-de557f240410"
+    closed: true
+  - role: "編集統合"
+    status: "completed"
+    outputs:
+      - "06_統合編集レビュー.md"
+      - "07_リテイク指示.md"
+      - "08_完成稿.md"
+      - "09_次回原作発注.md"
+    closed: true
+
+final:
+  judgment: "条件付き合格"
+  authoritative_output: "08_完成稿.md"
+  updated_files:
+    - "10_役割別作業場/00_共通資料_登場人物深掘り/04_監督/人物深掘り.md"
+    - "04_撮影現場主要人物.md"
+    - "70_オーナー窓口/03_採用済みオーナー判断.md"
+  next_round: "009_人物深掘り_真鍋由規"

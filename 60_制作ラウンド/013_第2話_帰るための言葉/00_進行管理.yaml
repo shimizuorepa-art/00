@@ -1,0 +1,88 @@
+round:
+  id: "013"
+  name: "第2話_帰るための言葉"
+  status: "completed"
+  purpose: "第1話の直後から、美咲が帰ろうとする現在行動を描き、白い封筒・止まった時計・雨の違和感を次へ進める"
+  owner_intent: "このまま第二話を書く"
+  dispatch_brief: "00_編集発注.md"
+
+subagents:
+  - role: "原作"
+    status: "completed"
+    agent_path: "10_役割別作業場/01_原作/agent.md"
+    output: "01_原作案.md"
+    agent_id: "019e6611-e069-7221-a477-242680c0a978"
+    started_at: "2026-05-27"
+    completed_at: "2026-05-27"
+    closed: true
+  - role: "考証"
+    status: "completed"
+    agent_path: "10_役割別作業場/02_考証/agent.md"
+    output: "02_考証メモ.md"
+    agent_id: "019e6615-e431-7f71-8df8-33981f2e2df5"
+    started_at: "2026-05-27"
+    completed_at: "2026-05-27"
+    closed: true
+  - role: "脚本"
+    status: "completed"
+    agent_path: "10_役割別作業場/03_脚本/agent.md"
+    output: "03_脚本ドラフト.md"
+    agent_id: "019e6619-7149-76d2-b103-8609557717ab"
+    started_at: "2026-05-27"
+    completed_at: "2026-05-27"
+    closed: true
+  - role: "文体"
+    status: "completed"
+    agent_path: "10_役割別作業場/05_文体/agent.md"
+    output: "03_脚本ドラフト_文体調整.md"
+    agent_id: "019e661e-ce2f-74f2-95ae-e8d7c92b011c"
+    started_at: "2026-05-27"
+    completed_at: "2026-05-27"
+    closed: true
+  - role: "肯定レビュー"
+    status: "completed"
+    agent_path: "10_役割別作業場/04_編集/肯定レビュー_agent.md"
+    output: "04_肯定レビュー.md"
+    agent_id: "019e6621-7879-7833-9f41-442f52f3af98"
+    started_at: "2026-05-27"
+    completed_at: "2026-05-27"
+    closed: true
+  - role: "否定レビュー"
+    status: "completed"
+    agent_path: "10_役割別作業場/04_編集/否定レビュー_agent.md"
+    output: "05_否定レビュー.md"
+    agent_id: "019e6621-c353-7cf0-91dd-580c665090f4"
+    started_at: "2026-05-27"
+    completed_at: "2026-05-27"
+    closed: true
+  - role: "編集統合"
+    status: "completed"
+    agent_path: "10_役割別作業場/04_編集/agent.md"
+    outputs:
+      - "06_統合編集レビュー.md"
+      - "07_リテイク指示.md"
+      - "08_完成稿.md"
+      - "09_次回原作発注.md"
+    agent_id: "019e6624-c3d9-74b3-8d66-489276c0b606"
+    started_at: "2026-05-27"
+    completed_at: "2026-05-27"
+    closed: true
+
+reflection:
+  status: "completed"
+  target_files:
+    - "20_校了品/01_話別完成稿/002_帰るための言葉.md"
+    - "20_校了品/小説正本.md"
+    - "00_運用管理/制作ダッシュボード.yaml"
+  agent_id: "019e6628-6d82-76c3-bc13-615b4f83f9b2"
+  closed: true
+
+final:
+  judgment: "採用"
+  authoritative_output: "20_校了品/01_話別完成稿/002_帰るための言葉.md"
+  updated_files:
+    - "20_校了品/01_話別完成稿/002_帰るための言葉.md"
+    - "20_校了品/小説正本.md"
+    - "00_運用管理/制作ダッシュボード.yaml"
+    - "60_制作ラウンド/013_第2話_帰るための言葉/00_進行管理.yaml"
+  next_round: "014_第3話_未定"

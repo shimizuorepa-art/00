@@ -1,0 +1,61 @@
+round:
+  id: "006"
+  name: "人物深掘り_朝倉澪"
+  status: "completed"
+  purpose: "朝倉澪を「なった人」として深掘りする"
+  owner_intent: "出演者三軸のうち、夢を叶えた後の孤独を持つ美咲役を固める"
+  dispatch_brief: "00_編集発注.md"
+
+subagents:
+  - role: "原作"
+    status: "completed"
+    output: "01_原作案.md"
+    agent_id: "019e627c-c963-7063-bbfe-9cdb68fff1ee"
+    closed: true
+  - role: "考証"
+    status: "completed"
+    output: "02_考証メモ.md"
+    agent_id: "019e627e-e4f9-7003-855b-4ddce8f017f9"
+    closed: true
+  - role: "脚本"
+    status: "completed"
+    output: "03_脚本ドラフト.md"
+    agent_id: "019e6280-e3b0-7ee2-96f8-443a57318a5a"
+    closed: true
+  - role: "肯定レビュー"
+    status: "completed"
+    output: "04_肯定レビュー.md"
+    agent_id: "019e6283-0a35-7780-8cdd-7298243250c8"
+    closed: true
+  - role: "否定レビュー"
+    status: "completed"
+    output: "05_否定レビュー.md"
+    agent_id: "019e6283-4100-7bb3-a94f-12830c6aa323"
+    closed: true
+  - role: "編集統合"
+    status: "completed"
+    outputs:
+      - "06_統合編集レビュー.md"
+      - "07_リテイク指示.md"
+      - "08_完成稿.md"
+      - "09_次回原作発注.md"
+    agent_id: "019e6285-70ae-7b41-b436-c0db6baef066"
+    closed: true
+
+reflection:
+  status: "completed"
+  target_files:
+    - "10_役割別作業場/00_共通資料_登場人物深掘り/02_美咲役/人物深掘り.md"
+    - "04_撮影現場主要人物.md"
+    - "70_オーナー窓口/03_採用済みオーナー判断.md"
+  agent_id: "019e6289-545f-7683-9bed-469e8c185b83"
+  closed: true
+
+final:
+  judgment: "条件付き合格"
+  authoritative_output: "08_完成稿.md"
+  updated_files:
+    - "10_役割別作業場/00_共通資料_登場人物深掘り/02_美咲役/人物深掘り.md"
+    - "04_撮影現場主要人物.md"
+    - "70_オーナー窓口/03_採用済みオーナー判断.md"
+  next_round: "007_人物深掘り_久我修一"

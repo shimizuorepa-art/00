@@ -1,0 +1,81 @@
+round:
+  id: "007"
+  name: "人物深掘り再監査_佐伯高瀬山野"
+  status: "completed"
+  purpose: "補佐くん代筆ベースだった佐伯蓮・高瀬玲奈・山野光を、朝倉澪と同じ正式サブ運用の熱量へ引き上げる"
+  owner_intent: "朝倉澪の掘り下げと同等の深さにする"
+  dispatch_brief: "00_編集発注.md"
+
+subagents:
+  - role: "原作_佐伯蓮"
+    status: "completed"
+    dispatch_prompt: "00_発注プロンプト_原作_佐伯蓮.md"
+    output: "01_原作案_佐伯蓮.md"
+    agent_id: "019e629e-df59-7d93-8ab0-bc3e8423fd58"
+    closed: true
+    note: "初回は発注プロンプト作成へ逸れたため再発注。2回目で出力確認済み。"
+  - role: "原作_高瀬玲奈"
+    status: "completed"
+    dispatch_prompt: "00_発注プロンプト_原作_高瀬玲奈.md"
+    output: "01_原作案_高瀬玲奈.md"
+    agent_id: "019e6299-1d84-7dc2-9af8-d462bfc9bf81"
+    closed: true
+    note: "出力確認済み。"
+  - role: "原作_山野光"
+    status: "completed"
+    dispatch_prompt: "00_発注プロンプト_原作_山野光.md"
+    output: "01_原作案_山野光.md"
+    agent_id: "019e629f-2c32-7af3-9fa7-41209e365744"
+    closed: true
+    note: "初回は発注プロンプト作成へ逸れたため再発注。2回目で出力確認済み。"
+  - role: "考証"
+    status: "completed"
+    output: "02_考証メモ.md"
+    agent_id: "019e62a2-92ff-75c1-b042-b01b37b8f18b"
+    closed: true
+  - role: "脚本"
+    status: "completed"
+    output: "03_脚本ドラフト.md"
+    agent_id: "019e62a5-fc4b-78b1-b510-37762d8aaef7"
+    closed: true
+  - role: "肯定レビュー"
+    status: "completed"
+    output: "04_肯定レビュー.md"
+    agent_id: "019e62a8-b09a-75f3-99f9-d9932959dc8e"
+    closed: true
+  - role: "否定レビュー"
+    status: "completed"
+    output: "05_否定レビュー.md"
+    agent_id: "019e62a8-fd70-7473-9375-89ce0b7ff20f"
+    closed: true
+  - role: "編集統合"
+    status: "completed"
+    outputs:
+      - "06_統合編集レビュー.md"
+      - "07_リテイク指示.md"
+      - "08_完成稿.md"
+      - "09_次回原作発注.md"
+    agent_id: "019e62b0-6761-71f2-9328-ef49c3428e2c"
+    closed: true
+
+reflection:
+  status: "completed"
+  target_files:
+    - "10_役割別作業場/00_共通資料_登場人物深掘り/01_悠人役/人物深掘り.md"
+    - "10_役割別作業場/00_共通資料_登場人物深掘り/03_魔王役/人物深掘り.md"
+    - "10_役割別作業場/00_共通資料_登場人物深掘り/07_AD/人物深掘り.md"
+    - "04_撮影現場主要人物.md"
+    - "70_オーナー窓口/03_採用済みオーナー判断.md"
+  agent_id: "019e62b4-ba79-7c52-a816-448b3dd93f3a"
+  closed: true
+
+final:
+  judgment: "条件付き合格"
+  authoritative_output: "08_完成稿.md"
+  updated_files:
+    - "10_役割別作業場/00_共通資料_登場人物深掘り/01_悠人役/人物深掘り.md"
+    - "10_役割別作業場/00_共通資料_登場人物深掘り/03_魔王役/人物深掘り.md"
+    - "10_役割別作業場/00_共通資料_登場人物深掘り/07_AD/人物深掘り.md"
+    - "04_撮影現場主要人物.md"
+    - "70_オーナー窓口/03_採用済みオーナー判断.md"
+  next_round: "008_人物深掘り_久我修一"
