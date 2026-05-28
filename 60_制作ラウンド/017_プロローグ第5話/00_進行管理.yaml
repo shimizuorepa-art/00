@@ -1,0 +1,92 @@
+round:
+  id: "017"
+  name: "プロローグ第5話"
+  status: "completed"
+  purpose: "「カット」で撮影現場へ反転し、主要登場人物を顔見せしてプロローグを完走する"
+  owner_intent: "馬車できたの雑さを原作者らしさとして出し、現場のしかめっつらを見せる"
+  dispatch_brief: "00_編集発注.md"
+
+subagents:
+  - role: "原作"
+    status: "completed"
+    agent_path: "10_役割別作業場/01_原作/agent.md"
+    output: "01_原作案.md"
+    agent_id: "019e6722-8799-7672-808f-6703e1aa288d"
+    started_at: "2026-05-27"
+    completed_at: "2026-05-27"
+    closed: true
+  - role: "考証"
+    status: "completed"
+    agent_path: "10_役割別作業場/02_考証/agent.md"
+    output: "02_考証メモ.md"
+    agent_id: "019e6726-bb37-7bf2-9c7a-42691631adf6"
+    started_at: "2026-05-27"
+    completed_at: "2026-05-27"
+    closed: true
+  - role: "脚本"
+    status: "completed"
+    agent_path: "10_役割別作業場/03_脚本/agent.md"
+    output: "03_脚本ドラフト.md"
+    agent_id: "019e672a-ebc9-7ad2-834c-abc09ad0bca6"
+    started_at: "2026-05-27"
+    completed_at: "2026-05-27"
+    closed: true
+  - role: "文体"
+    status: "completed"
+    agent_path: "10_役割別作業場/05_文体/agent.md"
+    output: "03_脚本ドラフト_文体調整.md"
+    agent_id: "019e672e-d14c-7871-8051-14f77d97b1e2"
+    started_at: "2026-05-27"
+    completed_at: "2026-05-27"
+    closed: true
+  - role: "肯定レビュー"
+    status: "completed"
+    agent_path: "10_役割別作業場/04_編集/肯定レビュー_agent.md"
+    output: "04_肯定レビュー.md"
+    agent_id: "019e6731-c235-73c1-970c-84a11b1e82ee"
+    started_at: "2026-05-27"
+    completed_at: "2026-05-27"
+    closed: true
+  - role: "否定レビュー"
+    status: "completed"
+    agent_path: "10_役割別作業場/04_編集/否定レビュー_agent.md"
+    output: "05_否定レビュー.md"
+    agent_id: "019e6731-c442-74a0-bd20-01ffa8d892a2"
+    started_at: "2026-05-27"
+    completed_at: "2026-05-27"
+    closed: true
+  - role: "編集統合"
+    status: "completed"
+    agent_path: "10_役割別作業場/04_編集/agent.md"
+    outputs:
+      - "06_統合編集レビュー.md"
+      - "07_リテイク指示.md"
+      - "08_完成稿.md"
+      - "09_次回原作発注.md"
+    agent_id: "019e6735-08c1-7970-9858-b5a129dc6ff5"
+    started_at: "2026-05-27"
+    completed_at: "2026-05-27"
+    closed: true
+
+reflection:
+  status: "completed"
+  target_files:
+    - "60_制作ラウンド/017_プロローグ第5話/08_完成稿.md"
+    - "20_校了品/小説正本.md"
+    - "00_運用管理/制作ダッシュボード.yaml"
+  agent_id: ""
+  closed: true
+
+final:
+  judgment: "adopted"
+  authoritative_output: "60_制作ラウンド/017_プロローグ第5話/08_完成稿.md"
+  superseded_by: "018_プロローグ再編"
+  updated_files:
+    - "06_統合編集レビュー.md"
+    - "07_リテイク指示.md"
+    - "08_完成稿.md"
+    - "09_次回原作発注.md"
+    - "60_制作ラウンド/017_プロローグ第5話/08_完成稿.md"
+    - "20_校了品/小説正本.md"
+    - "00_運用管理/制作ダッシュボード.yaml"
+  next_round: "018_プロローグ再編"

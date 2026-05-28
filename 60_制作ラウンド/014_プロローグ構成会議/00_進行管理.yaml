@@ -1,0 +1,44 @@
+round:
+  id: "014"
+  name: "プロローグ構成会議"
+  status: "completed"
+  purpose: "第1話・第2話をプロローグ扱いに変更し、プロローグ完了までの残り構成と第3話の切りどころを決める"
+  owner_intent: "導入、異世界らしさ、劇中劇のカット後の主要登場人物顔見せまでをプロローグとし、完了後に第1章へ入る"
+  dispatch_brief: "00_編集発注.md"
+
+subagents:
+  - role: "構成作家"
+    status: "completed"
+    agent_path: "10_役割別作業場/10_構成作家/agent.md"
+    outputs:
+      - "章構成メモ.md"
+      - "00_構成メモ.md"
+    agent_id: "019e66e2-f506-70d1-9a68-e0b1a8f4b02e"
+    started_at: "2026-05-27"
+    completed_at: "2026-05-27"
+    closed: true
+  - role: "編集"
+    status: "completed"
+    agent_path: "10_役割別作業場/04_編集/agent.md"
+    output: "06_統合編集レビュー.md"
+    agent_id: ""
+    started_at: ""
+    completed_at: "2026-05-27"
+    closed: true
+
+reflection:
+  status: "pending"
+  target_files:
+    - "00_運用管理/制作ダッシュボード.yaml"
+    - "20_校了品/小説正本.md"
+  agent_id: ""
+  closed: false
+
+final:
+  judgment: "構成採用"
+  authoritative_output: "60_制作ラウンド/014_プロローグ構成会議/章構成メモ.md"
+  updated_files:
+    - "60_制作ラウンド/014_プロローグ構成会議/章構成メモ.md"
+    - "60_制作ラウンド/014_プロローグ構成会議/00_構成メモ.md"
+    - "60_制作ラウンド/014_プロローグ構成会議/00_進行管理.yaml"
+  next_round: "015_プロローグ第3話"

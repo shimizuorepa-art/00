@@ -7,6 +7,14 @@ round:
   dispatch_brief: "00_編集発注.md"
 
 subagents:
+  - role: "構成作家"
+    status: "pending"
+    agent_path: "10_役割別作業場/10_構成作家/agent.md"
+    output: "00_構成メモ.md"
+    agent_id: ""
+    started_at: ""
+    completed_at: ""
+    closed: false
   - role: "原作"
     status: "pending"
     agent_path: "10_役割別作業場/01_原作/agent.md"

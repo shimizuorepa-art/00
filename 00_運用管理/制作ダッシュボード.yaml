@@ -1,13 +1,56 @@
 project:
   name: "AIライター室"
   mode: "半自動ライティング"
-  current_focus: "第1章構成会議"
+  current_focus: "第1章完走・GitHubアップ完了"
   owner_bridge: "補佐くん"
-  updated_at: "2026-05-27"
+  updated_at: "2026-05-28"
+  premise:
+    original_genre: "恋愛コメディ"
+    adaptation_condition: "原作通りに作らないこと"
+    story_axis: "原作者の後出し改変に振り回される映像化現場の悲哀と破綻を、各人物が自分の役回りで受け止めていく群像劇"
 
 policy:
   dispatch_body_format: "markdown"
   progress_tracking_format: "yaml"
+  chapter_unit:
+    default_episode_count: 10
+    owner_review: "chapter_level"
+    owner_inputs:
+      - "この章で描きたいこと"
+      - "章末で到達したい状態"
+      - "絶対入れたい出来事・台詞・感情"
+      - "やりすぎたくない要素"
+    team_decides:
+      - "章内10話の役割分担"
+      - "各話の開始点と終了点"
+      - "場面継続・転換"
+      - "各話の切りどころ"
+      - "会話や余韻を次話へ回す判断"
+    episode_cut_rule: "1話につき必ず何かを1つ変え、変わったら切る"
+  prologue_unit:
+    status: "completed"
+    owner_approved: true
+    finalized_at: "2026-05-27"
+    included_in_chapter_count: false
+    completed_episodes:
+      - "001_雨がやむまで"
+      - "002_帰るための言葉"
+      - "003_馬車できた"
+      - "004_カット"
+      - "005_鳥車"
+    goal:
+      - "導入"
+      - "異世界らしさ"
+      - "劇中劇のカット後の主要登場人物顔見せ"
+    required_elements:
+      - "異世界導入の核として「馬車で」を残す"
+      - "唐突な現実破綻として扱う"
+      - "原作者が映像化をコケにしている感じを出す"
+      - "原作は恋愛コメディだが、映像化条件が「原作通りに作らないこと」である"
+      - "原作者の後出し改変が、現場の脚本・演出・制作・演技を破綻へ巻き込む"
+      - "劇中の悠人が「電車が事故で止まっててさ。馬車で来た」と軽く言い、配車・バス・馬車が混ざる感触で扱う"
+      - "コンビニ魔王店長をプロローグで顔見せする"
+    next_phase_after_completion: "第1章"
   subagent_required_for:
     - "章構成メモ"
     - "各話構成メモ"
@@ -21,11 +64,11 @@ policy:
   fallback_draft_label: "補佐くん仮稿"
 
 active_round:
-  id: "014"
-  name: "第1章構成会議"
-  status: "pending"
-  next_action: "第3話制作へ入る前に、構成作家が第1章10話の仮配置と第3話の構成メモを作る。"
-  source_round: "013_第2話_帰るための言葉"
+  id: "029"
+  name: "第1章第10話"
+  status: "completed"
+  next_action: "第1章第10話まで校了済み。章制作関連成果物をコミットし、GitHub mainへpush済み。次フェーズは第2章構成会議。"
+  source_round: "028_第1章第9話"
 
 rounds:
   - id: "001"
@@ -100,6 +143,108 @@ rounds:
     status: "completed"
     result: "第2話『帰るための言葉』を正式サブ運用で校了し、小説正本へ反映"
     authoritative_output: "20_校了品/01_話別完成稿/002_帰るための言葉.md"
+    subagent_workflow: true
+  - id: "014"
+    name: "プロローグ構成会議"
+    status: "completed"
+    result: "第1話・第2話をプロローグ扱いに変更し、全5話構成と第3話の切りどころを確定"
+    authoritative_output: "60_制作ラウンド/014_プロローグ構成会議/章構成メモ.md"
+    subagent_workflow: true
+  - id: "015"
+    name: "プロローグ第3話"
+    status: "completed"
+    result: "第3話『戻れない足』を正式サブ運用で校了。後続の018_プロローグ再編で新001・新002へ圧縮統合。"
+    authoritative_output: "60_制作ラウンド/015_プロローグ第3話/08_完成稿.md"
+    superseded_by: "018_プロローグ再編"
+    subagent_workflow: true
+  - id: "016"
+    name: "プロローグ第4話"
+    status: "completed"
+    result: "第4話『馬車できた』を正式サブ運用で校了。後続の018_プロローグ再編で新003へ移動。"
+    authoritative_output: "60_制作ラウンド/016_プロローグ第4話/08_完成稿.md"
+    superseded_by: "018_プロローグ再編"
+    subagent_workflow: true
+  - id: "017"
+    name: "プロローグ第5話"
+    status: "completed"
+    result: "第5話『カット』を正式サブ運用で校了。後続の018_プロローグ再編で新004・新005へ分割。"
+    authoritative_output: "60_制作ラウンド/017_プロローグ第5話/08_完成稿.md"
+    superseded_by: "018_プロローグ再編"
+    subagent_workflow: true
+  - id: "018"
+    name: "プロローグ再編"
+    status: "completed"
+    result: "旧001〜旧003を新001・新002へ圧縮し、旧005を新004・新005へ分割。プロローグ全5話をオーナー承認済みで校了。"
+    authoritative_output:
+      - "60_制作ラウンド/018_プロローグ再編/01_新001_002圧縮案.md"
+      - "60_制作ラウンド/018_プロローグ再編/02_新003_005分割案.md"
+    subagent_workflow: true
+    note: "圧縮担当と分割担当のサブエージェント案を統合し、正本へ反映。"
+  - id: "019"
+    name: "第1章構成会議"
+    status: "completed"
+    result: "第1章『馬車は残る』の10話構成案を、再会議で劇中劇を舞台装置へ下げ、軽めの撮影現場コメディと主要7人への愛着形成を軸に再統合"
+    authoritative_output: "60_制作ラウンド/019_第1章構成会議/章構成メモ.md"
+    subagent_workflow: true
+  - id: "020"
+    name: "第1章第1話"
+    status: "completed"
+    result: "第1章第1話『馬車は幅と重量』を正式サブ運用で校了し、小説正本へ反映"
+    authoritative_output: "20_校了品/01_話別完成稿/006_馬車は幅と重量.md"
+    subagent_workflow: true
+  - id: "021"
+    name: "第1章第2話"
+    status: "completed"
+    result: "第1章第2話『消さない馬車』を正式サブ運用で校了し、小説正本へ反映"
+    authoritative_output: "20_校了品/01_話別完成稿/007_消さない馬車.md"
+    subagent_workflow: true
+  - id: "022"
+    name: "第1章第3話"
+    status: "completed"
+    result: "第1章第3話『書けてしまう道』を正式サブ運用で校了し、小説正本へ反映"
+    authoritative_output: "20_校了品/01_話別完成稿/008_書けてしまう道.md"
+    subagent_workflow: true
+  - id: "023"
+    name: "第1章第4話"
+    status: "completed"
+    result: "第1章第4話『言ったのは俺です』を正式サブ運用で校了し、小説正本へ反映"
+    authoritative_output: "20_校了品/01_話別完成稿/009_言ったのは俺です.md"
+    subagent_workflow: true
+  - id: "024"
+    name: "第1章第5話"
+    status: "completed"
+    result: "第1章第5話『手の動きはアドリブ』を正式サブ運用で校了し、小説正本へ反映"
+    authoritative_output: "20_校了品/01_話別完成稿/010_手の動きはアドリブ.md"
+    subagent_workflow: true
+  - id: "025"
+    name: "第1章第6話"
+    status: "completed"
+    result: "第1章第6話『原作通りにしない条件』を正式サブ運用で校了し、小説正本へ反映"
+    authoritative_output: "20_校了品/01_話別完成稿/011_原作通りにしない条件.md"
+    subagent_workflow: true
+  - id: "026"
+    name: "第1章第7話"
+    status: "completed"
+    result: "第1章第7話『魔王店長は待機中』を正式サブ運用で校了し、小説正本へ反映"
+    authoritative_output: "20_校了品/01_話別完成稿/012_魔王店長は待機中.md"
+    subagent_workflow: true
+  - id: "027"
+    name: "第1章第8話"
+    status: "completed"
+    result: "第1章第8話『撤収後の馬車』を正式サブ運用で校了し、小説正本へ反映"
+    authoritative_output: "20_校了品/01_話別完成稿/013_撤収後の馬車.md"
+    subagent_workflow: true
+  - id: "028"
+    name: "第1章第9話"
+    status: "completed"
+    result: "第1章第9話『最初に作った一通』を正式サブ運用で校了し、小説正本へ反映"
+    authoritative_output: "20_校了品/01_話別完成稿/014_最初に作った一通.md"
+    subagent_workflow: true
+  - id: "029"
+    name: "第1章第10話"
+    status: "completed"
+    result: "第1章第10話『次の撮影へ残るもの』を正式サブ運用で校了し、小説正本へ反映。第1章全10話完走。"
+    authoritative_output: "20_校了品/01_話別完成稿/015_次の撮影へ残るもの.md"
     subagent_workflow: true
 
 characters:
