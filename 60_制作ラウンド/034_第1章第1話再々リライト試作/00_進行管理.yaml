@@ -1,0 +1,61 @@
+round:
+  id: "034"
+  name: "第1章第1話再々リライト試作"
+  status: "completed"
+  purpose: "第1章第1話に、馬車が現場でまずい理由、熟練者の処理温度、年齢・容姿の手触り、30歳鳴海の掻き回しを反映する"
+  source_round: "033_第1章第1話再リライト試作"
+  source_episode: "20_校了品/01_話別完成稿/006_馬車は幅と重量.md"
+
+subagents:
+  - role: "人物正本再調整_鳴海30歳"
+    status: "completed"
+    agent_id: "019e6d61-5c89-74f1-8452-d067ae1211bd"
+    owned_files:
+      - "10_役割別作業場/00_共通資料_登場人物深掘り/06_原作者/人物深掘り.md"
+      - "02_characters.md"
+      - "04_撮影現場主要人物.md"
+    completed_at: "2026-05-28"
+    closed: true
+  - role: "文体再々リライト_006試作"
+    status: "completed"
+    agent_id: "019e6d61-b5cd-7202-b26e-9243365e36a0"
+    owned_files:
+      - "60_制作ラウンド/034_第1章第1話再々リライト試作/00_編集発注.md"
+      - "60_制作ラウンド/034_第1章第1話再々リライト試作/01_再々リライト案.md"
+      - "60_制作ラウンド/034_第1章第1話再々リライト試作/02_自己点検.md"
+    completed_at: "2026-05-28"
+    closed: true
+  - role: "編集レビュー_006再々試作"
+    status: "completed"
+    agent_id: "019e6d65-c6f9-7443-8257-08c68e2a3a3e"
+    owned_files:
+      - "60_制作ラウンド/034_第1章第1話再々リライト試作/03_編集レビュー.md"
+    started_at: "2026-05-28"
+    completed_at: "2026-05-28"
+    closed: true
+  - role: "文体微修正_006"
+    status: "completed"
+    agent_id: "019e6d67-b0e9-78c2-bd8c-68c428b4213c"
+    owned_files:
+      - "60_制作ラウンド/034_第1章第1話再々リライト試作/04_再々リライト微修正版.md"
+    completed_at: "2026-05-28"
+    closed: true
+  - role: "文体調整_高瀬スポット"
+    status: "completed"
+    agent_id: "019e6d71-038f-7561-aa55-d69ed8fc82c2"
+    owned_files:
+      - "60_制作ラウンド/034_第1章第1話再々リライト試作/05_高瀬スポット調整案.md"
+    completed_at: "2026-05-28"
+    closed: true
+
+outputs:
+  current_candidate: "60_制作ラウンド/034_第1章第1話再々リライト試作/05_高瀬スポット調整案.md"
+  review: "60_制作ラウンド/034_第1章第1話再々リライト試作/03_編集レビュー.md"
+  previous_candidate: "60_制作ラウンド/034_第1章第1話再々リライト試作/01_再々リライト案.md"
+  previous_micro_candidate: "60_制作ラウンド/034_第1章第1話再々リライト試作/04_再々リライト微修正版.md"
+
+final:
+  judgment: "採用候補。馬車のまずさを読者へ短く渡し、高瀬の容姿と職能を主スポットとして浮き上がらせ、他人物は一要素だけに抑えた。正本未反映。"
+  character_update: "鳴海千景は現行正本で30歳へ更新済み。旧45歳設定は初期案・深層素材扱い。"
+
+next_action: "オーナー確認後、採用なら話別完成稿006と小説正本へ反映する。"
