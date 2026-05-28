@@ -51,12 +51,34 @@ policy:
       - "劇中の悠人が「電車が事故で止まっててさ。馬車で来た」と軽く言い、配車・バス・馬車が混ざる感触で扱う"
       - "コンビニ魔王店長をプロローグで顔見せする"
     next_phase_after_completion: "第1章"
+  character_profiles:
+    canonical_source: "10_役割別作業場/00_共通資料_登場人物深掘り"
+    legacy_sources:
+      - "02_characters.md"
+      - "04_撮影現場主要人物.md"
+      - "60_制作ラウンド/*_人物深掘り*"
+    rule: "人物解釈で矛盾した場合は、登場人物深掘り正本を優先する。旧メモだけにある設定を採用する場合は、先に正本へ反映する。"
+  style_rewrite:
+    required_agent_path: "10_役割別作業場/05_文体/agent.md"
+    required_guide: "10_役割別作業場/05_文体/文体ガイド.md"
+    timing:
+      - "03_脚本ドラフト.md の後"
+      - "08_完成稿.md の後、校了直前"
+    final_output: "08_完成稿_文体最終.md"
+    use_for_final_reflection: true
+    core_tasks:
+      - "AIっぽさを排除する"
+      - "不自然な言い回しを修正する"
+      - "キャラが勝手に動くレベルで文章を躍動させる"
+    rule: "文体担当はリライト専門。楽しんで書き、少ない指示で人物の動きと声を前へ出す。"
   subagent_required_for:
     - "章構成メモ"
     - "各話構成メモ"
     - "原作案"
     - "考証メモ"
     - "脚本ドラフト"
+    - "文体リライト"
+    - "校了前文体最終リライト"
     - "肯定レビュー"
     - "否定レビュー"
     - "統合編集レビュー"
@@ -64,11 +86,11 @@ policy:
   fallback_draft_label: "補佐くん仮稿"
 
 active_round:
-  id: "029"
-  name: "第1章第10話"
+  id: "032"
+  name: "第1章10話文体最終リライト"
   status: "completed"
-  next_action: "第1章第10話まで校了済み。章制作関連成果物をコミットし、GitHub mainへpush済み。次フェーズは第2章構成会議。"
-  source_round: "028_第1章第9話"
+  next_action: "第1章10話を05_文体の新運用で最終リライト済み。必要なら第1章全体の通読・正本反映確認へ進む。"
+  source_round: "031_文体工程再調整"
 
 rounds:
   - id: "001"
@@ -246,36 +268,54 @@ rounds:
     result: "第1章第10話『次の撮影へ残るもの』を正式サブ運用で校了し、小説正本へ反映。第1章全10話完走。"
     authoritative_output: "20_校了品/01_話別完成稿/015_次の撮影へ残るもの.md"
     subagent_workflow: true
+  - id: "030"
+    name: "人物深掘り正本再調整"
+    status: "completed"
+    result: "10_役割別作業場/00_共通資料_登場人物深掘りを人物正本として再調整。消え設定と矛盾を整理し、濃すぎる設定を本文表層・深層素材・旧案へ階層化。"
+    authoritative_output: "10_役割別作業場/00_共通資料_登場人物深掘り/README.md"
+    subagent_workflow: true
+  - id: "031"
+    name: "文体工程再調整"
+    status: "completed"
+    result: "05_文体をリライト専門として再定義。脚本後と校了直前に必ず通し、指示はAIっぽさ排除、不自然な言い回し修正、人物が勝手に動く躍動の3点に絞る。"
+    authoritative_output: "10_役割別作業場/05_文体/agent.md"
+    subagent_workflow: false
+  - id: "032"
+    name: "第1章10話文体最終リライト"
+    status: "completed"
+    result: "第1章006-015の全10話を05_文体の新運用で最終リライト。構造、出来事、到達点は維持し、説明の硬さを動作・道具・間へ寄せた。"
+    authoritative_output: "20_校了品/01_話別完成稿"
+    subagent_workflow: true
 
 characters:
   - name: "佐伯蓮"
     role: "悠人役"
     status: "deepened"
-    audit_status: "formal_subagent_completed_conditional"
+    audit_status: "canon_rebalanced"
   - name: "朝倉澪"
     role: "美咲役"
     status: "deepened"
-    audit_status: "formal_subagent_completed"
+    audit_status: "canon_rebalanced"
   - name: "山野光"
     role: "魔王役"
     status: "deepened"
-    audit_status: "formal_subagent_completed_conditional"
+    audit_status: "canon_rebalanced"
   - name: "高瀬玲奈"
     role: "AD"
     status: "deepened"
-    audit_status: "formal_subagent_completed_conditional"
+    audit_status: "canon_rebalanced"
   - name: "久我修一"
     role: "監督"
     status: "deepened"
-    audit_status: "formal_subagent_completed_conditional"
+    audit_status: "canon_rebalanced"
   - name: "真鍋由規"
     role: "脚本"
     status: "deepened"
-    audit_status: "formal_subagent_completed_conditional"
+    audit_status: "canon_rebalanced"
   - name: "鳴海千景"
     role: "原作者"
     status: "deepened"
-    audit_status: "formal_subagent_completed_conditional"
+    audit_status: "canon_rebalanced"
 
 open_questions:
   - "制作側チームの深掘り順序"
