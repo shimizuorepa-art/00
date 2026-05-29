@@ -1,0 +1,34 @@
+round:
+  id: "042"
+  name: "新プロローグ_原点から再起動"
+  status: "completed"
+  purpose: "最初の雑な制作指示を大本に、新制作工程で新プロローグのキャラ会議と章骨子を作る。"
+  owner_intent: "あなたの文章力を試したい。情緒感ある小説書いて。"
+  workflow: "character_driven_lightweight"
+
+outputs:
+  dispatch_card: "00_発注カード.md"
+  character_meeting: "キャラ会議.md"
+  chapter_outline: "章構成メモ.md"
+
+subagents:
+  - role: "キャラ会議"
+    status: "completed"
+    agent_path: "10_役割別作業場/11_キャラ会議/agent.md"
+    output: "キャラ会議.md"
+    agent_id: "019e7155-2e43-7f01-ae00-aae56078b5ce"
+    closed: true
+  - role: "構成作家"
+    status: "completed"
+    agent_path: "10_役割別作業場/10_構成作家/agent.md"
+    output: "章構成メモ.md"
+    agent_id: "019e7157-93f3-7191-bf30-7400fdab042a"
+    closed: true
+
+final:
+  judgment: "新制作工程の入口として、キャラ会議と章構成メモまで完了。新プロローグは全5話構成で試作に進める。"
+  authoritative_output: "章構成メモ.md"
+  updated_files:
+    - "60_制作ラウンド/042_新プロローグ_原点から再起動/キャラ会議.md"
+    - "60_制作ラウンド/042_新プロローグ_原点から再起動/章構成メモ.md"
+  next_round: "043_新プロローグ第1話_雨がやむまで"

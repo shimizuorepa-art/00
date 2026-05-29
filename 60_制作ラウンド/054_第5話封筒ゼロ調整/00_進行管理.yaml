@@ -1,0 +1,18 @@
+round:
+  id: "054"
+  name: "第5話封筒ゼロ調整"
+  status: "completed"
+  started_at: "2026-05-29"
+  source_round: "048_新プロローグ第5話_モニターのあと"
+  goal: "第5話『モニターのあと』から『封筒』という語をゼロにし、小道具名ではなく手元、白いもの、渡されていないものとして意味を残す。"
+
+owner_request:
+  summary: "第5話の『封筒』出現を思い切ってゼロにしても破綻しないか確認し、実施する。"
+
+outputs:
+  authoritative_output: "20_校了品/01_話別完成稿/005_モニターのあと.md"
+
+result:
+  before_count: 8
+  after_count: 0
+  note: "『封筒』の語はゼロ。意味は美咲の手元、白いもの、渡されていないものとして残した。"

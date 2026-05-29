@@ -1,0 +1,56 @@
+round:
+  id: "044"
+  name: "新プロローグ第2話_帰るための言葉"
+  status: "completed"
+  purpose: "新プロローグ第2話を新工程で作る。"
+  owner_intent: "第2話へ進む。新しい軽量発注で、キャラに任せて制作する。"
+  workflow: "character_driven_lightweight"
+
+outputs:
+  dispatch_card: "00_発注カード.md"
+  design_memo: "01_設計メモ.md"
+  first_draft: "02_本文初稿.md"
+  style_pass: "03_文体調整.md"
+  editorial_check: "04_編集確認.md"
+  final_draft: "05_完成稿.md"
+
+subagents:
+  - role: "設計"
+    status: "completed"
+    agent_path: "10_役割別作業場/01_原作/agent.md; 10_役割別作業場/02_考証/agent.md"
+    output: "01_設計メモ.md"
+    agent_id: "019e7176-d970-75c2-b50d-e713d3c4f3ad"
+    closed: true
+  - role: "脚本"
+    status: "completed"
+    agent_path: "10_役割別作業場/03_脚本/agent.md"
+    output: "02_本文初稿.md"
+    agent_id: "019e7179-0e8b-7e93-bb3a-2bd6eb41bbf8"
+    closed: true
+  - role: "文体"
+    status: "completed"
+    agent_path: "10_役割別作業場/05_文体/agent.md"
+    output: "03_文体調整.md"
+    agent_id: "019e717d-12d4-7e33-8e96-c5fe9513fec6"
+    closed: true
+  - role: "編集"
+    status: "completed"
+    agent_path: "10_役割別作業場/04_編集/agent.md"
+    outputs:
+      - "04_編集確認.md"
+      - "05_完成稿.md"
+    agent_id: "019e717f-ed4b-7c43-8a42-f8760d03c1c6"
+    closed: true
+
+final:
+  judgment: "通す。新制作工程で第2話を完成稿化し、話別完成稿へ反映した。"
+  authoritative_output: "20_校了品/01_話別完成稿/002_帰るための言葉.md"
+  updated_files:
+    - "60_制作ラウンド/044_新プロローグ第2話_帰るための言葉/01_設計メモ.md"
+    - "60_制作ラウンド/044_新プロローグ第2話_帰るための言葉/02_本文初稿.md"
+    - "60_制作ラウンド/044_新プロローグ第2話_帰るための言葉/03_文体調整.md"
+    - "60_制作ラウンド/044_新プロローグ第2話_帰るための言葉/04_編集確認.md"
+    - "60_制作ラウンド/044_新プロローグ第2話_帰るための言葉/05_完成稿.md"
+    - "20_校了品/01_話別完成稿/002_帰るための言葉.md"
+    - "20_校了品/小説正本.md"
+  next_round: "045_新プロローグ第3話_馬車が遅れまして"

@@ -1,0 +1,56 @@
+round:
+  id: "047"
+  name: "新プロローグ第4話_異世界混線強化"
+  status: "completed"
+  purpose: "採用済み第4話を、異世界混線を強めた版へ差し替える。"
+  owner_intent: "馬車、兵隊、異種族、巨大な鳥、魔法エフェクトを強め、山野光の魔王が電子パス残高不足で改札に詰まる画を入れる。"
+  workflow: "character_driven_lightweight"
+
+outputs:
+  dispatch_card: "00_発注カード.md"
+  design_memo: "01_設計メモ.md"
+  first_draft: "02_本文強化稿.md"
+  style_pass: "03_文体調整.md"
+  editorial_check: "04_編集確認.md"
+  final_draft: "05_完成稿.md"
+  correction_draft: "06_違和感修正稿.md"
+  correction_check: "07_違和感修正_編集確認.md"
+
+subagents:
+  - role: "設計"
+    status: "completed"
+    agent_path: "10_役割別作業場/01_原作/agent.md; 10_役割別作業場/02_考証/agent.md"
+    output: "01_設計メモ.md"
+    agent_id: "019e71e9-6bd3-7a53-831b-7ed4bea5219d"
+    closed: true
+  - role: "脚本"
+    status: "completed"
+    agent_path: "10_役割別作業場/03_脚本/agent.md"
+    output: "02_本文強化稿.md"
+    agent_id: "019e71eb-9f3e-7082-90be-5903eb44b487"
+    closed: true
+  - role: "文体"
+    status: "completed"
+    agent_path: "10_役割別作業場/05_文体/agent.md"
+    output: "03_文体調整.md"
+    agent_id: "019e71ee-87bc-7be2-83b7-f61f16eac6a7"
+    closed: true
+  - role: "編集"
+    status: "completed"
+    agent_path: "10_役割別作業場/04_編集/agent.md"
+    outputs:
+      - "04_編集確認.md"
+      - "05_完成稿.md"
+    agent_id: "019e71f1-f1e6-7d41-8342-3191aa953761"
+    closed: true
+
+final:
+  judgment: "採用。正本004を異世界混線強化版へ差し替え後、違和感修正稿を反映済み。"
+  authoritative_output: "20_校了品/01_話別完成稿/004_改札前の魔王.md"
+  updated_files:
+    - "20_校了品/01_話別完成稿/004_改札前の魔王.md"
+    - "00_運用管理/制作ダッシュボード.yaml"
+    - "60_制作ラウンド/047_新プロローグ第4話_異世界混線強化/00_進行管理.yaml"
+    - "60_制作ラウンド/047_新プロローグ第4話_異世界混線強化/06_違和感修正稿.md"
+    - "60_制作ラウンド/047_新プロローグ第4話_異世界混線強化/07_違和感修正_編集確認.md"
+  next_round: "048_新プロローグ第5話_モニターのあと"

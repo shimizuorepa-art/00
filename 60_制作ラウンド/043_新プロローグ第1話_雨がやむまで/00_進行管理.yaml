@@ -1,0 +1,56 @@
+round:
+  id: "043"
+  name: "新プロローグ第1話_雨がやむまで"
+  status: "completed"
+  purpose: "最初の雑な制作指示を大本に、新プロローグ第1話の本文を新工程で作る。"
+  owner_intent: "あなたの文章力を試したい。情緒感ある小説書いて。"
+  workflow: "character_driven_lightweight"
+
+outputs:
+  dispatch_card: "00_発注カード.md"
+  design_memo: "01_設計メモ.md"
+  first_draft: "02_本文初稿.md"
+  style_pass: "03_文体調整.md"
+  editorial_check: "04_編集確認.md"
+  final_draft: "05_完成稿.md"
+
+subagents:
+  - role: "設計"
+    status: "completed"
+    agent_path: "10_役割別作業場/01_原作/agent.md; 10_役割別作業場/02_考証/agent.md"
+    output: "01_設計メモ.md"
+    agent_id: "019e715a-c286-7971-bd8a-77a8b8304690"
+    closed: true
+  - role: "脚本"
+    status: "completed"
+    agent_path: "10_役割別作業場/03_脚本/agent.md"
+    output: "02_本文初稿.md"
+    agent_id: "019e715c-54e7-7b01-bd36-454e9e910535"
+    closed: true
+  - role: "文体"
+    status: "completed"
+    agent_path: "10_役割別作業場/05_文体/agent.md"
+    output: "03_文体調整.md"
+    agent_id: "019e715d-dde5-7f91-afa3-b0b32ca0eacf"
+    closed: true
+  - role: "編集"
+    status: "completed"
+    agent_path: "10_役割別作業場/04_編集/agent.md"
+    outputs:
+      - "04_編集確認.md"
+      - "05_完成稿.md"
+    agent_id: "019e7160-27b2-7d41-b91a-7bb94206c1c2"
+    closed: true
+
+final:
+  judgment: "通す。新制作工程で第1話を完成稿化し、話別完成稿へ反映した。"
+  authoritative_output: "20_校了品/01_話別完成稿/001_雨がやむまで.md"
+  updated_files:
+    - "60_制作ラウンド/043_新プロローグ第1話_雨がやむまで/01_設計メモ.md"
+    - "60_制作ラウンド/043_新プロローグ第1話_雨がやむまで/02_本文初稿.md"
+    - "60_制作ラウンド/043_新プロローグ第1話_雨がやむまで/03_文体調整.md"
+    - "60_制作ラウンド/043_新プロローグ第1話_雨がやむまで/04_編集確認.md"
+    - "60_制作ラウンド/043_新プロローグ第1話_雨がやむまで/05_完成稿.md"
+    - "20_校了品/01_話別完成稿/001_雨がやむまで.md"
+    - "20_校了品/小説正本.md"
+  next_round: "044_新プロローグ第2話_帰るための言葉"

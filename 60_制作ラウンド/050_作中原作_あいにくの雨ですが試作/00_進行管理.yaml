@@ -1,0 +1,38 @@
+round:
+  id: "050"
+  name: "作中原作_あいにくの雨ですが試作"
+  status: "completed"
+  purpose: "作中映画の原作恋愛コメディ小説を試作する。"
+  owner_intent: "映像化で原作通りに作らないことで生まれるカオスの舞台装置として、原作側の軽さを作る。"
+  workflow: "character_driven_lightweight"
+
+outputs:
+  dispatch_card: "00_発注カード.md"
+  source_trial: "01_原作試作.md"
+  editorial_check: "02_編集確認.md"
+
+subagents:
+  - role: "原作"
+    status: "completed"
+    agent_path: "10_役割別作業場/01_原作/agent.md"
+    output: "01_原作試作.md"
+    agent_id: "019e721c-ad83-7c01-b05f-4a296ed8b66c"
+    closed: true
+  - role: "編集"
+    status: "completed"
+    agent_path: "10_役割別作業場/04_編集/agent.md"
+    output: "02_編集確認.md"
+    agent_id: "019e7222-591d-7a90-90fe-f56d63e7ff73"
+    closed: true
+
+final:
+  judgment: "採用寄り。ただし現時点では正本ではなく、作中原作の試作正本候補として保留。"
+  authoritative_output: "60_制作ラウンド/050_作中原作_あいにくの雨ですが試作/01_原作試作.md"
+  updated_files:
+    - "60_制作ラウンド/050_作中原作_あいにくの雨ですが試作/00_発注カード.md"
+    - "60_制作ラウンド/050_作中原作_あいにくの雨ですが試作/00_進行管理.yaml"
+    - "60_制作ラウンド/050_作中原作_あいにくの雨ですが試作/01_原作試作.md"
+    - "60_制作ラウンド/050_作中原作_あいにくの雨ですが試作/02_編集確認.md"
+    - "70_オーナー窓口/03_採用済みオーナー判断.md"
+    - "70_オーナー窓口/05_オーナー補佐/補佐くん日記.md"
+  next_round: "作中原作設定メモ化、または新プロローグ章末人物更新"
