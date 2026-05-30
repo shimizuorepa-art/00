@@ -1,0 +1,35 @@
+round:
+  id: "087"
+  name: "容姿年齢描写微調整"
+  status: "in_progress"
+  purpose: "ユーザーフィードバックに基づき、005話〜010話の容姿と年齢の描写を自然に馴染ませる"
+  owner_intent: "真鍋のちょいワル削除、年齢の開示工夫（小物・会話等の活用）、他キャラのちょい顔出しをさらっと流すメリハリ"
+  workflow: "character_driven_lightweight"
+
+outputs:
+  dispatch_card: "00_発注カード.md"
+  style_pass: "03_文体調整.md"
+  editorial_check: "04_編集確認.md"
+  final_draft: "05_完成稿.md"
+
+subagents:
+  - role: "文体"
+    status: "in_progress"
+    agent_path: "10_役割別作業場/05_文体/agent.md"
+    output: "03_文体調整.md"
+    agent_id: "style_subagent_087"
+    closed: false
+  - role: "編集"
+    status: "pending"
+    agent_path: "10_役割別作業場/04_編集/agent.md"
+    outputs:
+      - "04_編集確認.md"
+      - "05_完成稿.md"
+    agent_id: "editor_subagent_087"
+    closed: false
+
+final:
+  judgment: ""
+  authoritative_output: ""
+  updated_files: []
+  next_round: ""

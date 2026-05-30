@@ -1,0 +1,33 @@
+round:
+  id: "078"
+  name: "005モニター時系列微調整"
+  status: "completed"
+  source_round: "077_005役者同席調整"
+  created_at: "2026-05-30"
+  purpose: "005確認室から雨の撮影直後に見える物理的な湿り気を抜き、加工済み映像のモニター確認として時系列を整える"
+
+owner_input:
+  type: "本文微調整指示"
+  summary:
+    - "005は雨の撮影直後ではない。"
+    - "さっきまで雨の現場にいましたよ的な空気を削除する。"
+    - "モニター内の雨描写は残す。"
+
+outputs:
+  dispatch: "00_編集発注.md"
+  edit_note: "01_修正メモ.md"
+  reflection: "02_反映メモ.md"
+  canonical_text: "20_校了品/01_話別完成稿/005_モニターのあと.md"
+
+subagents:
+  - role: "編集・軽量本文調整"
+    status: "completed"
+    output:
+      - "01_修正メモ.md"
+      - "02_反映メモ.md"
+
+result:
+  summary: "005確認室のビニール傘が水を落とす描写を丸めたケーブルへ置き換え、雨撮影直後の物理的な湿り気を抜いた。"
+  reflected_to:
+    - "20_校了品/01_話別完成稿/005_モニターのあと.md"
+  next_action: "006〜010の各話発注カード相当を作成し、006から通常工程へ戻す。"
