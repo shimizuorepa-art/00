@@ -1,9 +1,9 @@
 project:
   name: "AIライター室"
   mode: "半自動ライティング"
-  current_focus: "086_010『確定が届く』を完了。006〜010再制作の区切りまで到達"
+  current_focus: "087_011-015『発注カード一括作成』を完了。011以降の再制作設計図が確定"
   owner_bridge: "補佐くん"
-  updated_at: "2026-05-30"
+  updated_at: "2026-05-31"
   premise:
     original_genre: "恋愛コメディ"
     adaptation_condition: "原作通りに作らないこと"
@@ -88,11 +88,11 @@ policy:
   fallback_draft_label: "補佐くん仮稿"
 
 active_round:
-  id: "086"
-  name: "010_確定が届く"
+  id: "087"
+  name: "011-015発注カード一括作成"
   status: "completed"
-  next_action: "006〜010再制作の区切りまで完了。次は章内後続の整理、または011以降の再制作方針へ進む。"
-  source_round: "079_006-010発注カード一括作成"
+  next_action: "011〜015発注カード一括作成が完了。次は011話『読み合わせは短く』の執筆フェーズに進む。"
+  source_round: "087_011-015発注カード一括作成"
 
 rounds:
   - id: "001"
@@ -709,6 +709,15 @@ rounds:
       - "60_制作ラウンド/086_010_確定が届く/05_完成稿.md"
       - "20_校了品/01_話別完成稿/010_確定が届く.md"
     subagent_workflow: true
+  - id: "087"
+    name: "011-015発注カード一括作成"
+    status: "completed"
+    result: "011〜015話の再制作に向け、大筋、各話発注カード案、および執筆担当への渡し方を一括策定し、後半戦の設計図を確定した。"
+    authoritative_output:
+      - "60_制作ラウンド/087_011-015発注カード一括作成/01_011-015大筋.md"
+      - "60_制作ラウンド/087_011-015発注カード一括作成/02_各話発注カード案.md"
+      - "60_制作ラウンド/087_011-015発注カード一括作成/03_執筆担当への渡し方.md"
+    subagent_workflow: false
 
 characters:
   - name: "佐伯蓮"

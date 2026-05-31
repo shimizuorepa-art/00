@@ -1,7 +1,7 @@
 round:
   id: "087"
   name: "容姿年齢描写微調整"
-  status: "in_progress"
+  status: "completed"
   purpose: "ユーザーフィードバックに基づき、005話〜010話の容姿と年齢の描写を自然に馴染ませる"
   owner_intent: "真鍋のちょいワル削除、年齢の開示工夫（小物・会話等の活用）、他キャラのちょい顔出しをさらっと流すメリハリ"
   workflow: "character_driven_lightweight"
